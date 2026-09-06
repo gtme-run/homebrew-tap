@@ -10,14 +10,16 @@
 set -euo pipefail
 
 TAG="${1:?usage: ./bump.sh vX.Y.Z}"
-if [[ "${TAG}" != v* ]]; then
+if [[ "${TAG}" != v* ]]
+then
   echo "bump.sh: tag must look like v0.2.0" >&2
   exit 1
 fi
 BASE="https://github.com/elegant-atomics/gtme/releases/download/${TAG}"
 FORMULA="$(cd "$(dirname "$0")" && pwd)/Formula/gtme.rb"
 
-if ! SUMS="$(curl -fsSL "${BASE}/checksums.txt")"; then
+if ! SUMS="$(curl -fsSL "${BASE}/checksums.txt")"
+then
   echo "bump.sh: no checksums.txt at ${BASE}" >&2
   exit 1
 fi
@@ -26,9 +28,11 @@ sha_for() {
   printf '%s\n' "${SUMS}" | awk -v f="gtme_${TAG}_$1.tar.gz" '$2 == f { print $1 }'
 }
 
-for target in darwin_arm64 darwin_amd64 linux_arm64 linux_amd64; do
+for target in darwin_arm64 darwin_amd64 linux_arm64 linux_amd64
+do
   sha="$(sha_for "${target}")"
-  if [[ -z "${sha}" ]]; then
+  if [[ -z "${sha}" ]]
+  then
     echo "bump.sh: checksums.txt has no entry for ${target}" >&2
     exit 1
   fi
@@ -41,7 +45,7 @@ for target in darwin_arm64 darwin_amd64 linux_arm64 linux_amd64; do
       next
     }
     { print }
-  ' "${FORMULA}" > "${FORMULA}.tmp" && mv "${FORMULA}.tmp" "${FORMULA}"
+  ' "${FORMULA}" >"${FORMULA}.tmp" && mv "${FORMULA}.tmp" "${FORMULA}"
 done
 
 echo "Formula/gtme.rb now pins ${TAG}:"
