@@ -19,10 +19,10 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
+      # setup-homebrew recognises a homebrew-* repository and taps the
+      # checkout itself, so no `brew tap` step.
       - name: set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master
-      - name: tap this checkout
-        run: brew tap elegant-atomics/tap "$PWD"
       - name: install
         run: brew install elegant-atomics/tap/gtme
       - name: test
