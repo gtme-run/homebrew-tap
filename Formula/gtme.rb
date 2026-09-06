@@ -5,8 +5,12 @@
 class Gtme < Formula
   desc "GTM as code: campaign pipelines in YAML over an append-only SQLite ledger"
   homepage "https://github.com/elegant-atomics/gtme"
-  version "0.1.0"
   license "Apache-2.0"
+
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   on_macos do
     on_arm do
@@ -30,11 +34,6 @@ class Gtme < Formula
     end
   end
 
-  livecheck do
-    url :stable
-    strategy :github_latest
-  end
-
   def install
     bin.install "gtme"
   end
@@ -50,7 +49,7 @@ class Gtme < Formula
   end
 
   test do
-    assert_match "gtme v#{version}", shell_output("#{bin}/gtme version")
+    assert_match "gtme v#{version}", shell_output("#{bin}/gtme version 2>&1")
     system bin/"gtme", "init"
     assert_path_exists testpath/".gtme/ledger.db"
   end

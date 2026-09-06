@@ -21,6 +21,6 @@ brew install --formula Formula/gtme.rb && brew test gtme
 git commit -am "gtme v0.2.0"
 ```
 
-`bump.sh` reads the release's `checksums.txt` and rewrites the version and
-every url/sha256 pair in `Formula/gtme.rb`. CI installs and tests the
+`bump.sh` reads the release's `checksums.txt` and rewrites every url/sha256
+pair in `Formula/gtme.rb`. CI installs and tests the
 formula on a clean macOS and a clean Linux runner on every push.
