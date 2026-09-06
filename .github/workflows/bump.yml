@@ -1,0 +1,46 @@
+# Keep the formula pinned to gtme's latest release without a human in the
+# loop: daily, or on demand, read the latest release tag, run bump.sh, and
+# push the change if there is one. test.yml then installs it on clean
+# macOS and Linux runners. Needs no cross-repo secret — the tap reads a
+# public release and writes only itself.
+name: bump
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag to pin (default: latest)"
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: resolve tag
+        id: tag
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="${{ github.event.inputs.tag }}"
+          if [ -z "$tag" ]; then
+            tag="$(gh release view --repo elegant-atomics/gtme --json tagName --jq .tagName)"
+          fi
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+      - name: bump
+        run: ./bump.sh "${{ steps.tag.outputs.tag }}"
+      - name: push if changed
+        run: |
+          if git diff --quiet; then
+            echo "already at ${{ steps.tag.outputs.tag }}"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -am "gtme ${{ steps.tag.outputs.tag }}"
+          git push
