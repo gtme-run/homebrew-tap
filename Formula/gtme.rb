@@ -14,23 +14,23 @@ class Gtme < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/elegant-atomics/gtme/releases/download/v0.3.0/gtme_v0.3.0_darwin_arm64.tar.gz"
-      sha256 "406ff2a74ddf70169ceb438d82a84e91617dff3670cbacfa57b6ddde6fcb90bc"
+      url "https://github.com/elegant-atomics/gtme/releases/download/v0.4.0/gtme_v0.4.0_darwin_arm64.tar.gz"
+      sha256 "23f7f675d4994c95530005ae21612fc09764f5f1e5460128fcd8c8d841df2a6c"
     end
     on_intel do
-      url "https://github.com/elegant-atomics/gtme/releases/download/v0.3.0/gtme_v0.3.0_darwin_amd64.tar.gz"
-      sha256 "5f9f10f6eecbe1a9bfe8940013b20946d47e250c8dd4f09bbb54f72344a01961"
+      url "https://github.com/elegant-atomics/gtme/releases/download/v0.4.0/gtme_v0.4.0_darwin_amd64.tar.gz"
+      sha256 "76fcc60a19f849c9b059e78c27124be3638792a7fdcdd07a42d2dda8d1d35858"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/elegant-atomics/gtme/releases/download/v0.3.0/gtme_v0.3.0_linux_arm64.tar.gz"
-      sha256 "070adcbb2aca6c548a653055f84b3468141e3fab2e779c5dc78bfd74d9eff235"
+      url "https://github.com/elegant-atomics/gtme/releases/download/v0.4.0/gtme_v0.4.0_linux_arm64.tar.gz"
+      sha256 "3db3b7973deb7a7b1d6d2b3c4065ffa7faa0336eeeb85974f7a6aeda78cb354d"
     end
     on_intel do
-      url "https://github.com/elegant-atomics/gtme/releases/download/v0.3.0/gtme_v0.3.0_linux_amd64.tar.gz"
-      sha256 "e718739a34a225c6f580a86b0bceb472c03c9f0ed999a99095ea3aa992bf51e7"
+      url "https://github.com/elegant-atomics/gtme/releases/download/v0.4.0/gtme_v0.4.0_linux_amd64.tar.gz"
+      sha256 "ca94afd02dd35c13382b32348768b06f1a6c5a31872a8496c380bf7691c8152a"
     end
   end
 
