@@ -44,3 +44,13 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git commit -am "gtme ${{ steps.tag.outputs.tag }}"
           git push
+      # A push made with GITHUB_TOKEN does not trigger on: push workflows,
+      # so run the clean-machine test on the new pin explicitly.
+      - name: test the new pin
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git log -1 --format=%s | grep -q "^gtme ${{ steps.tag.outputs.tag }}$"; then
+            gh workflow run test.yml --ref main
+          fi
