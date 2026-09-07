@@ -1,9 +1,9 @@
 # homebrew-tap
 
-The Homebrew tap for [gtme](https://github.com/elegant-atomics/gtme).
+The Homebrew tap for [gtme](https://github.com/gtme-run/gtme).
 
 ```sh
-brew install elegant-atomics/tap/gtme
+brew install gtme-run/tap/gtme
 gtme init
 ```
 

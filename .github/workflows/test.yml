@@ -1,4 +1,4 @@
-# The tap's only promise: `brew install elegant-atomics/tap/gtme` works on
+# The tap's only promise: `brew install gtme-run/tap/gtme` works on
 # a machine that has never seen gtme. Both runners start clean.
 name: test
 
@@ -25,10 +25,10 @@ jobs:
       - name: set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master
       - name: install
-        run: brew install elegant-atomics/tap/gtme
+        run: brew install gtme-run/tap/gtme
       - name: test
-        run: brew test elegant-atomics/tap/gtme
+        run: brew test gtme-run/tap/gtme
       - name: audit
-        run: brew audit --strict elegant-atomics/tap/gtme
+        run: brew audit --strict gtme-run/tap/gtme
       - name: version
         run: gtme version

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Repin Formula/gtme.rb to a released tag of elegant-atomics/gtme.
+# Repin Formula/gtme.rb to a released tag of gtme-run/gtme.
 #
 #   ./bump.sh v0.2.0
 #
@@ -15,7 +15,7 @@ then
   echo "bump.sh: tag must look like v0.2.0" >&2
   exit 1
 fi
-BASE="https://github.com/elegant-atomics/gtme/releases/download/${TAG}"
+BASE="https://github.com/gtme-run/gtme/releases/download/${TAG}"
 FORMULA="$(cd "$(dirname "$0")" && pwd)/Formula/gtme.rb"
 
 if ! SUMS="$(curl -fsSL "${BASE}/checksums.txt")"
