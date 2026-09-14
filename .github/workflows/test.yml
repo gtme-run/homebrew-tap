@@ -23,7 +23,7 @@ jobs:
       # setup-homebrew recognises a homebrew-* repository and taps the
       # checkout itself, so no `brew tap` step.
       - name: set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@master
+        uses: Homebrew/actions/setup-homebrew@main
       - name: install
         run: brew install gtme-run/tap/gtme
       - name: test
