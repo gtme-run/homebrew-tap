@@ -14,23 +14,23 @@ class Gtme < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/gtme-run/gtme/releases/download/v0.5.1/gtme_v0.5.1_darwin_arm64.tar.gz"
-      sha256 "bf8553cdbc536dfde9c0c8d2b7b1ad40051b92a23addf60198d7235c50f4ea40"
+      url "https://github.com/gtme-run/gtme/releases/download/v0.6.0/gtme_v0.6.0_darwin_arm64.tar.gz"
+      sha256 "b2ebc595a1fd224e44fbcd9ac6f68ab87fb3043c650961ab2dbf884e27ade9a3"
     end
     on_intel do
-      url "https://github.com/gtme-run/gtme/releases/download/v0.5.1/gtme_v0.5.1_darwin_amd64.tar.gz"
-      sha256 "d00564e012d28adb0013dc42e326765a167bde192fd4faf632d556a5eba9e4d3"
+      url "https://github.com/gtme-run/gtme/releases/download/v0.6.0/gtme_v0.6.0_darwin_amd64.tar.gz"
+      sha256 "76d26495ed8ac304a2674a852efb999403b214a5356cff8631986fc53a58c27d"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/gtme-run/gtme/releases/download/v0.5.1/gtme_v0.5.1_linux_arm64.tar.gz"
-      sha256 "a8a46084249cf3562fc4a8a934b5d409cacf471914f97297c2b6116af6921aa1"
+      url "https://github.com/gtme-run/gtme/releases/download/v0.6.0/gtme_v0.6.0_linux_arm64.tar.gz"
+      sha256 "39bb7339bbf4529fbd041961a61ea7b023cc257cbe7ffff3928b50b6ec5c9f85"
     end
     on_intel do
-      url "https://github.com/gtme-run/gtme/releases/download/v0.5.1/gtme_v0.5.1_linux_amd64.tar.gz"
-      sha256 "a7ee3faeed2237567fa9c11d2a0d906aa8c1a86a8774abc164cc440ea501a9e8"
+      url "https://github.com/gtme-run/gtme/releases/download/v0.6.0/gtme_v0.6.0_linux_amd64.tar.gz"
+      sha256 "7a45db696159eca68779c142d840774c50664792e3f8eeee13a7cc0ba2a0a5bb"
     end
   end
 
